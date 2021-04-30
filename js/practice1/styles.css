@@ -1,0 +1,139 @@
+:root {
+  --color-gray: rgb(230, 230, 230);
+  --color-gray-medium: rgb(219, 218, 218);
+  --color-green: rgb(64, 175, 13);
+  --color-green-light: rgb(71, 194, 14);
+  --shadow: 0 1px 1px rgba(0, 0, 0, 0.185);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  max-width: 450px;
+  padding: 1rem 1.3rem;
+  font-size: 1.6rem;
+  background-color: var(--color-gray);
+  border-radius: 3px;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+label {
+  margin-bottom: 1rem;
+}
+.form-box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.form-box:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.form-box :last-child {
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-gray-medium);
+}
+
+.btn {
+  font-size: inherit;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-green);
+  color: #fff;
+  padding: 1rem 2rem;
+  margin-top: 3px;
+  align-self: flex-end;
+}
+
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:hover {
+  background-color: var(--color-green-light);
+}
+
+.open {
+  display: none;
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
+}
+
+.authentication {
+  color: red;
+}
+
+
+
+/*galaxy-fold & iphon 5/SE*/
+@media screen and (max-height: 670px) {
+  html {
+    font-size: 60%;
+  }
+  #subject {
+    height: 90px;
+  }
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9em;
+  }
+}
+
+/*galaxy-fold landscape*/
+@media screen and (max-height: 520px) and (orientation: landscape) {
+  .form-box {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  }
+  .form-box :last-child {
+    flex-basis: 70%;
+  }
+  label{
+    margin: 0 0 0 2rem;
+  }
+  .authentication {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-height: 420px) and (orientation: landscape) {
+  html {
+    font-size: 50%;
+  }
+  #subject {
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-height:1023px){
+  form{
+      transform: scale(1.5);
+    }
+}
+/* @media screen and (min-width: 1023px) and (min-height:1023px){
+  form{
+      transform: scale(1.5);
+    }
+} */

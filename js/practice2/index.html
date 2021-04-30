@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Click the button to sort the list alphabetically:</p>
+    <button onclick="sortList()">Sort</button>
+    <div id="id01">
+        <li>Olso</li>
+        <li>Stockholm</li>
+        <li>Berlin</li>
+        <li>Rome</li>
+    </div>
+
+    <script>
+        function sortList() {
+            var list, i, switching, b, shouldSwitch;
+            list = document.getElementById("id01")
+            switching = true;
+            while (switching) {
+                switching = false;
+                b = list.getElementsByTagName("li")
+                for ( i = 0; i < b.length-1; i++) {
+                    shouldSwitch = false;
+                    if (b[i].innerHTML.toLowerCase() > b[i+1].innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }         
+                }
+                if (shouldSwitch) {
+                    b[i].parentNode.insertBefore(b[i+1], b[i])
+                    switching = true
+                }
+            }
+        }
+    </script>
+</body>
+</html>
